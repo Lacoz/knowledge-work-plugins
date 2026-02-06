@@ -21,17 +21,27 @@ Plugins are **tool-agnostic** — they describe workflows in terms of categories
 
 ## Dynamics 365 / Dataverse setup
 
-Dataverse is tenant-specific, so there's no shared HTTP URL to put in `.mcp.json`. Instead you install a small local MCP server once. It works on **Windows, macOS, and Linux** (requires [.NET 8+](https://dotnet.microsoft.com/download)).
+Dataverse is tenant-specific, so there's no shared HTTP URL to put in `.mcp.json`. Instead you install a small local MCP server once. It works on **Windows, macOS, and Linux**.
 
-**Install:**
+**1. Install .NET SDK 8+** (skip if `dotnet --version` already works):
+
+```bash
+# macOS
+brew install --cask dotnet-sdk@8
+
+# Windows — download from https://dotnet.microsoft.com/download
+# Linux — https://learn.microsoft.com/en-us/dotnet/core/install/linux
+```
+
+**2. Install the Dataverse MCP server:**
 
 ```bash
 dotnet tool install --global Microsoft.PowerPlatform.Dataverse.MCP
 ```
 
-**Enable in your Dataverse environment** — in [Power Platform admin center](https://admin.powerplatform.microsoft.com), go to your environment → Settings → Features → enable *Allow MCP clients to interact with Dataverse MCP server*. Then create a Dataverse connection in [Power Automate](https://make.powerautomate.com) → Connections → + New → "Microsoft Dataverse" and note the connection URL.
+**3. Enable in your Dataverse environment** — in [Power Platform admin center](https://admin.powerplatform.microsoft.com), go to your environment → Settings → Features → enable *Allow MCP clients to interact with Dataverse MCP server*. Then create a Dataverse connection in [Power Automate](https://make.powerautomate.com) → Connections → + New → "Microsoft Dataverse" and note the connection URL.
 
-**Add to your MCP config** (`~/.cursor/mcp.json`, Claude Desktop config, etc.):
+**4. Add to your MCP config** (`~/.cursor/mcp.json`, Claude Desktop config, etc.):
 
 ```json
 "dataverse": {
