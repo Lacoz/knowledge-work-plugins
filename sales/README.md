@@ -106,7 +106,7 @@ Connect your tools for a richer experience:
 
 | Category | Examples | What It Enables |
 |---|---|---|
-| **CRM** | HubSpot, Close | Pipeline data, account history, contact records |
+| **CRM** | HubSpot, Close, [Dynamics 365](CONNECTORS.md#dynamics-365--dataverse-setup) | Pipeline data, account history, contact records |
 | **Transcripts** | Fireflies, Gong, Chorus | Call recordings, transcripts, key moments |
 | **Enrichment** | Clay, ZoomInfo, Apollo | Company and contact data enrichment |
 | **Chat** | Slack, Teams | Internal discussions, colleague intel |
